@@ -1,5 +1,5 @@
 FROM jenkins/jenkins:lts
-LABEL maintainer="man@praqma.net" 
+LABEL maintainer="elesvi@gmail.com" 
 
 ARG JAVA_OPTS
 ENV JAVA_OPTS "-Djenkins.install.runSetupWizard=false ${JAVA_OPTS:-}"

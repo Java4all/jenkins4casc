@@ -1,6 +1,6 @@
 # jenkins4casc
 
-Repository for the Praqma custom Docker image using the new [Configuration as Code plugin](https://github.com/jenkinsci/configuration-as-code-plugin).
+Repository for the Jenkins CaC custom Docker image using the new [Configuration as Code plugin](https://github.com/jenkinsci/configuration-as-code-plugin).
 
 ## How to use the Docker image
 
@@ -8,11 +8,11 @@ Basically the same way as you would use the official Jenkins Docker image. With 
 
 ### Example: Minimum Configuration
 
-`docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -e CASC_JENKINS_CONFIG=https://raw.githubusercontent.com/Praqma/jenkins4casc/master/jenkins-minimal-example.yaml praqma/jenkins4casc`
+`docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -e CASC_JENKINS_CONFIG=https://github.com/Java4all/jenkins4casc/blob/master/jenkins-minimal-example.yaml javaforever/jenkins4casc`
 
 We added the switch
 
-`-e CASC_JENKINS_CONFIG=https://raw.githubusercontent.com/Praqma/jenkins4casc/master/jenkins-minimal-example.yaml`
+`-e CASC_JENKINS_CONFIG=https://github.com/Java4all/jenkins4casc/blob/master/jenkins-minimal-example.yaml`
 
 To point to the smallest possible configuration of Jenkins with Jenkins configuration as code:
 
@@ -29,13 +29,13 @@ For more advanced examples take a look at the demos sections found in the [offic
 
 ### Example using Docker Compose and Docker secrets
 
-We have a running example using Docker compose you're free to take a look at located [here](https://github.com/Praqma/praqma-jenkins-casc).
+We have a running example using Docker compose you're free to take a look at located [here](https://github.com/Java4all/jenkins4casc).
 
 ## Docker image versioning strategy
 
-The tag `latest` always refer to an image build from `HEAD` on master. When we do an official release we create a tag corresponding to the version of the included plugin. For instance, at the time of this writing the latest version of the plugin is `0.2-alpha` when the Docker image for this version is ready we'll release a version with the tag `praqma/jenkins4casc:0.2-alpha` and `praqma/jenkins4casc:0.2-alpha-latest`.
+The tag `latest` always refer to an image build from `HEAD` on master. When we do an official release we create a tag corresponding to the version of the included plugin. For instance, at the time of this writing the latest version of the plugin is `0.2-alpha` when the Docker image for this version is ready we'll release a version with the tag `javaforever/jenkins4casc:0.2-alpha` and `javaforever/jenkins4casc:0.2-alpha-latest`.
 
-If we need to update the Docker image, with a change that is not related to a new version of the plugin we'll create a new version with the tag `0.2-alpha-1`and update the tag `praqma/jenkins4casc:0.2-alpha-latest`.
+If we need to update the Docker image, with a change that is not related to a new version of the plugin we'll create a new version with the tag `0.2-alpha-1`and update the tag `javaforever/jenkins4casc:0.2-alpha-latest`.
 
 ### Docker autobuild
 
